@@ -1,0 +1,37 @@
+mport matplotlib.pyplot as plt
+
+# Dados para o gráfico
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Criando o gráfico
+plt.plot(x, y, marker='o', linestyle='-', color='b', label='Linha Exemplo')
+
+# Personalizando o gráfico
+plt.title("Gráfico de Linhas Exemplo")
+plt.xlabel("Eixo X")
+plt.ylabel("Eixo Y")
+plt.grid(True)
+plt.legend()
+
+# Mostrando o gráfico
+plt.show()
+# Função para verificar se é um trio pitagórico
+def verificar_tripla_pitagorica(a, b, c):
+    # Ordena os números para garantir que c seja o maior
+    a, b, c = sorted([a, b, c])
+    
+    # Verifica a relação pitagórica
+    return a*2 + b2 == c*2
+
+# Entrada do usuário
+print("Verificador de Triplas Pitagóricas")
+a = int(input("Digite o primeiro número (a): "))
+b = int(input("Digite o segundo número (b): "))
+c = int(input("Digite o terceiro número (c): "))
+
+# Verificação e saída
+if verificar_tripla_pitagorica(a, b, c):
+    print(f"{a}, {b} e {c} formam uma tripla pitagórica!")
+else:
+    print(f"{a}, {b} e {c} NÃO formam uma tripla pitagórica.")
