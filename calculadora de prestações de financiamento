@@ -1,0 +1,39 @@
+import math
+
+def calcular_prestacao(principal, taxa_juros, num_prestacoes):
+    """
+    Calcula o valor da prestação no sistema Price.
+
+    Args:
+        principal (float): Valor total do financiamento.
+        taxa_juros (float): Taxa de juros mensal em porcentagem.
+        num_prestacoes (int): Número total de prestações.
+
+    Returns:
+        float: Valor da prestação.
+    """
+    # Converter a taxa de juros para decimal
+    taxa_juros = taxa_juros / 100
+
+    # Fórmula do sistema Price
+    fator = (1 + taxa_juros) ** num_prestacoes
+    prestacao = principal * (taxa_juros * fator) / (fator - 1)
+
+    return prestacao
+
+def main():
+    print("Calculadora de Financiamento - Sistema Price")
+    
+    # Entrada de dados
+    principal = float(input("1000 (R$): "))
+    taxa_juros = float(input("10(%): "))
+    num_prestacoes = int(input("1: "))
+    
+    # Cálculo da prestação
+    prestacao = calcular_prestacao(principal, taxa_juros, num_prestacoes)
+    
+    # Saída
+    print(f"\nValor da prestação mensal: R$ {prestacao:.2f}")
+
+if _name_ == "_main_":
+    main()
