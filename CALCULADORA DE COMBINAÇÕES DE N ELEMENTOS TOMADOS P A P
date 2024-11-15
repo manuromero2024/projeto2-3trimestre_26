@@ -1,0 +1,38 @@
+import math
+
+def calcular_combinacoes(n, p):
+    """
+    Calcula o número de combinações de n elementos tomados p a p.
+
+    Args:
+        n (int): Número total de elementos.
+        p (int): Número de elementos tomados por vez.
+
+    Returns:
+        int: Número de combinações possíveis.
+    """
+    if p > n:
+        return 0  # Não é possível tomar mais elementos do que o disponível
+    return math.comb(n, p)  # Usa a função de combinação da biblioteca math (Python 3.8+)
+
+def main():
+    print("Calculadora de Combinações (C(n, p))")
+    print("A fórmula utilizada é: C(n, p) = n! / (p! * (n-p)!)\n")
+    
+    # Entrada de dados
+    n = int(input("Digite o valor de n (número total de elementos): "))
+    p = int(input("Digite o valor de p (número de elementos tomados por vez): "))
+    
+    # Verificar valores inválidos
+    if n < 0 or p < 0:
+        print("\nOs valores de n e p devem ser não negativos.")
+        return
+    
+    # Cálculo das combinações
+    resultado = calcular_combinacoes(n, p)
+    
+    # Saída
+    print(f"\nNúmero de combinações C({n}, {p}) = {resultado}")
+
+if _name_ == "_main_":
+    main()
