@@ -1,0 +1,31 @@
+def verificar_poliedro_euleriano(vertices, arestas, faces):
+    """
+    Verifica se um poliedro é euleriano baseado na fórmula de Euler.
+
+    Args:
+        vertices (int): Número de vértices do poliedro.
+        arestas (int): Número de arestas do poliedro.
+        faces (int): Número de faces do poliedro.
+
+    Returns:
+        bool: True se for euleriano, False caso contrário.
+    """
+    return vertices - arestas + faces == 2
+
+def main():
+    print("Verificador de Poliedros Eulerianos")
+    print("A fórmula de Euler é: V - A + F = 2\n")
+    
+    # Entrada de dados
+    vertices = int(input("12 (V): "))
+    arestas = int(input("6 (A): "))
+    faces = int(input("4 (F): "))
+    
+    # Verificar se é euleriano
+    if verificar_poliedro_euleriano(vertices, arestas, faces):
+        print("\nO poliedro é euleriano (satisfaz a fórmula de Euler).")
+    else:
+        print("\nO poliedro NÃO é euleriano (não satisfaz a fórmula de Euler).")
+
+if _name_ == "_main_":
+    main()
